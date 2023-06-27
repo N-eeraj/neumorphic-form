@@ -1,0 +1,31 @@
+.heading {
+    color: #333;
+    font-size: 2rem;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.actionsContainer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.switchText {
+    display: flex;
+    column-gap: 5px;
+    color: #555;
+    font-size: 1rem;
+}
+
+.switchButton {
+    background-color: transparent;
+    color: var(--secondary);
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+}
