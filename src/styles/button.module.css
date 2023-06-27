@@ -1,0 +1,14 @@
+.button {
+    width: 150px;
+    padding: 10px;
+    color: var(--ink);
+    border-radius: 3px;
+    font-size: 1.05rem;
+    font-weight: bold;
+    box-shadow: -3px -3px 10px var(--shadow-left), 3px 3px 10px var(--shadow-right);
+    cursor: pointer;
+}
+
+.button:hover {
+    box-shadow: inset -1px -1px 5px var(--shadow-left), inset 1px 1px 5px var(--shadow-right);
+}

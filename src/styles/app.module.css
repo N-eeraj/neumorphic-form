@@ -2,7 +2,7 @@
     display: grid;
     place-items: center;
     height: 100dvh;
-    background-image: linear-gradient(var(--primary), var(--secondary));
+    background-color: var(--paper);
 }
 
 .form {
@@ -12,6 +12,6 @@
     row-gap: 30px;
     width: clamp(320px, 50%, 480px);
     padding: 25px;
-    background-color: white;
-    border-radius: 10px;
+    border-radius: 15px;
+    box-shadow: -3px -3px 10px var(--shadow-left), 3px 3px 10px var(--shadow-right);
 }

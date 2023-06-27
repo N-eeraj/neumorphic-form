@@ -1,6 +1,8 @@
 :root {
-    --primary: #0AF;
-    --secondary: #55C;
+    --paper: #E3E5EA;
+    --ink: #333;
+    --shadow-left: #FAFCFF;
+    --shadow-right: #CDCFD5;
 }
 
 * {
@@ -8,4 +10,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+    background-color: transparent;
+    border: none;
 }

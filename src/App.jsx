@@ -17,7 +17,12 @@ const App = () => {
   return (
     <div className={appStyles.mainBackground}>
       <form className={appStyles.form} onSubmit={preventSubmit}>
-        {formType === 'login' ? <LoginForm onChangeForm={handleFormChange} onSubmit={handleSubmit} /> : <RegisterForm onChangeForm={handleFormChange} onSubmit={handleSubmit} />}
+        {
+          formType === 'login' ?
+            <LoginForm onChangeForm={handleFormChange} onSubmit={handleSubmit} />
+          :
+            <RegisterForm onChangeForm={handleFormChange} onSubmit={handleSubmit} />
+        }
       </form>
     </div>
   )
