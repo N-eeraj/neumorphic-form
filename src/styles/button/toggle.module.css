@@ -1,0 +1,27 @@
+.button {
+    position: fixed;
+    top: 5dvh;
+    right: 5vw;
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: var(--paper);
+    box-shadow: -3px -3px 10px var(--shadow-left), 3px 3px 10px var(--shadow-right);
+    cursor: pointer;
+}
+
+.button:hover {
+    box-shadow: inset -1px -1px 5px var(--shadow-left), inset 1px 1px 5px var(--shadow-right);
+}
+
+.button:hover .icon {
+    transform: rotate(30deg);
+}
+
+.icon {
+    width: 50%;
+    height: 50%;
+    object-fit: contain;
+    transform: rotate(-15deg);
+    transition: transform 400ms;
+}

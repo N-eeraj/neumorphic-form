@@ -1,12 +1,10 @@
-import { useState } from "react"
+import { useState } from 'react'
 
 import LoginForm from '@components/forms/Login'
 import RegisterForm from '@components/forms/Register'
-
 import ToggleButton from '@components/Button/Toggle'
 
 import { preventSubmit } from '@/utils'
-
 import appStyles from '@styles/app.module.css'
 
 const App = () => {
@@ -14,7 +12,7 @@ const App = () => {
   const [theme, setTheme] = useState('dark')
 
   const handleFormChange = () => setFormType(prevForm => prevForm === 'login' ? 'signUp' : 'login')
-  const handleToggleTheme = () => setTheme(prevTheme => prevTheme === 'dark' ? 'light' : 'dark')
+  const handleToggleTheme = theme => setTheme(theme)
 
   const handleSubmit = data => console.log(data)
 
@@ -29,7 +27,7 @@ const App = () => {
         }
       </form>
 
-      <ToggleButton onClick={handleToggleTheme} />
+      <ToggleButton theme={theme} onClick={handleToggleTheme} />
     </div>
   )
 }

@@ -1,5 +1,4 @@
 import Button from '@components/Button'
-
 import formStyles from '@styles/form.module.css'
 
 const Register = ({onChangeForm, onSubmit}) => {
