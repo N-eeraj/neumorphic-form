@@ -1,6 +1,15 @@
+import Button from '@components/Button'
+
 import formStyles from '@styles/form.module.css'
 
-const Login = () => {
+const Login = ({onChangeForm, onSubmit}) => {
+  const handleClick = () => {
+    onSubmit({
+      email: '',
+      password: ''
+    })
+  }
+
   return (
     <>
       <h3 className={formStyles.heading}>
@@ -13,13 +22,11 @@ const Login = () => {
       </div>
 
       <div className={formStyles.actionsContainer}>
-        <button>
-          Login
-        </button>
+        <Button text="Login" onClick={handleClick} />
 
         <div className={formStyles.switchText}>
           Don't have an account?
-          <span className={formStyles.switchButton}>
+          <span className={formStyles.switchButton} onClick={onChangeForm}>
             Sign Up
           </span>
         </div>

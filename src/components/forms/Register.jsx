@@ -1,6 +1,16 @@
+import Button from '@components/Button'
+
 import formStyles from '@styles/form.module.css'
 
-const Register = () => {
+const Register = ({onChangeForm, onSubmit}) => {
+  const handleClick = () => {
+    onSubmit({
+      email: '',
+      password: '',
+      confirmPassword: ''
+    })
+  }
+
   return (
     <>
       <h3 className={formStyles.heading}>
@@ -14,13 +24,11 @@ const Register = () => {
       </div>
 
       <div className={formStyles.actionsContainer}>
-        <button>
-          Register
-        </button>
+        <Button text="Sign Up" onClick={handleClick} />
 
         <div className={formStyles.switchText}>
           Already have an account?
-          <span className={formStyles.switchButton}>
+          <span className={formStyles.switchButton} onClick={onChangeForm}>
             Login
           </span>
         </div>
