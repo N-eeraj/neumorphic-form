@@ -1,4 +1,4 @@
-import buttonStyles from '@styles/button.module.css'
+import buttonStyles from '@styles/button/index.module.css'
 
 const Button = ({text, onClick}) => {
   return (

@@ -5,6 +5,13 @@
     --shadow-right: #CDCFD5;
 }
 
+[data-theme="dark"] {
+    --paper: #151519;
+    --ink: #EEE;
+    --shadow-left: #202025;
+    --shadow-right: #07070A;
+}
+
 * {
     margin: 0;
     padding: 0;
