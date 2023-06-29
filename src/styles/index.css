@@ -2,14 +2,14 @@
     --paper: #E3E5EA;
     --ink: #333;
     --shadow-left: #FAFCFF;
-    --shadow-right: #CDCFD5;
+    --shadow-right: #C8CAD0;
 }
 
 [data-theme="dark"] {
     --paper: #151519;
     --ink: #EEE;
     --shadow-left: #202025;
-    --shadow-right: #07070A;
+    --shadow-right: #020205;
 }
 
 * {
@@ -19,4 +19,9 @@
     font-family: sans-serif;
     background-color: transparent;
     border: none;
+}
+
+*:focus {
+    box-shadow: inset -1px -1px 5px var(--shadow-left), inset 1px 1px 5px var(--shadow-right);
+    outline: none;
 }

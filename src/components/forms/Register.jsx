@@ -1,3 +1,4 @@
+import Input from '@components/Input'
 import Button from '@components/Button'
 import formStyles from '@styles/form.module.css'
 
@@ -17,9 +18,9 @@ const Register = ({onChangeForm, onSubmit}) => {
       </h3>
 
       <div className={formStyles.inputContainer}>
-        <input type="text" />
-        <input type="password" />
-        <input type="password" />
+        <Input type="email" placeholder="Enter Email" />
+        <Input type="password" placeholder="Enter Password" />
+        <Input type="password" placeholder="Confirm Password" />
       </div>
 
       <div className={formStyles.actionsContainer}>

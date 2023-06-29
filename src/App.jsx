@@ -18,6 +18,8 @@ const App = () => {
 
   return (
     <div className={appStyles.mainBackground} data-theme={theme}>
+      <ToggleButton theme={theme} onClick={handleToggleTheme} />
+
       <form className={appStyles.form} onSubmit={preventSubmit}>
         {
           formType === 'login' ?
@@ -26,8 +28,6 @@ const App = () => {
             <RegisterForm onChangeForm={handleFormChange} onSubmit={handleSubmit} />
         }
       </form>
-
-      <ToggleButton theme={theme} onClick={handleToggleTheme} />
     </div>
   )
 }

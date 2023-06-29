@@ -14,9 +14,7 @@
 }
 
 .input:focus {
-    border-color: var(--shadow-right);
-    box-shadow: inset -1px -1px 5px var(--shadow-left), inset 1px 1px 5px var(--shadow-right);
-    outline: none;
+    border-color: var(--shadow-left);
 }
 
 .input::placeholder {
