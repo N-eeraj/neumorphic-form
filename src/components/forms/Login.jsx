@@ -17,7 +17,7 @@ const Login = ({onChangeForm, onSubmit}) => {
       </h3>
 
       <div className={formStyles.inputContainer}>
-        <Input placeholder="Enter Email" />
+        <Input type="email" placeholder="Enter Email" />
         <Input type="password" placeholder="Enter Password" />
       </div>
 
