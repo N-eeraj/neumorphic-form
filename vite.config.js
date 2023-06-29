@@ -4,6 +4,7 @@ import * as path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: process.env.NODE_ENV === 'production' ? '/neumorphic-form/' : '/',
   plugins: [react()],
   resolve: {
     alias: {
