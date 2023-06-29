@@ -1,3 +1,4 @@
+import Input from '@components/Input'
 import Button from '@components/Button'
 import formStyles from '@styles/form.module.css'
 
@@ -16,8 +17,8 @@ const Login = ({onChangeForm, onSubmit}) => {
       </h3>
 
       <div className={formStyles.inputContainer}>
-        <input type="text" />
-        <input type="password" />
+        <Input placeholder="Enter Email" />
+        <Input type="password" placeholder="Enter Password" />
       </div>
 
       <div className={formStyles.actionsContainer}>

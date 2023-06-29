@@ -10,5 +10,5 @@
 }
 
 .button:hover {
-    box-shadow: inset -1px -1px 5px var(--shadow-left), inset 1px 1px 5px var(--shadow-right);
+    box-shadow: inset -1px -1px 3px var(--shadow-left), inset 1px 1px 3px var(--shadow-right);
 }

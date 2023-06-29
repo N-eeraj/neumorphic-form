@@ -1,0 +1,14 @@
+.input {
+    width: 300px;
+    padding: 10px;
+    background-color: var(--page);
+    border: 1px solid transparent;
+    border-radius: 5px;
+    box-shadow: inset -1px -1px 3px var(--shadow-left), inset 1px 1px 3px var(--shadow-right);
+}
+
+.input:focus {
+    border-color: var(--shadow-right);
+    box-shadow: inset -1px -1px 5px var(--shadow-left), inset 1px 1px 5px var(--shadow-right);
+    outline: none;
+}
