@@ -14,8 +14,6 @@ const App = () => {
   const handleFormChange = () => setFormType(prevForm => prevForm === 'login' ? 'signUp' : 'login')
   const handleToggleTheme = theme => setTheme(theme)
 
-  const handleSubmit = data => console.log(data)
-
   return (
     <div className={appStyles.mainBackground} data-theme={theme}>
       <ToggleButton theme={theme} onClick={handleToggleTheme} />
@@ -23,9 +21,9 @@ const App = () => {
       <form className={appStyles.form} onSubmit={preventSubmit}>
         {
           formType === 'login' ?
-            <LoginForm onChangeForm={handleFormChange} onSubmit={handleSubmit} />
+            <LoginForm onChangeForm={handleFormChange} />
           :
-            <RegisterForm onChangeForm={handleFormChange} onSubmit={handleSubmit} />
+            <RegisterForm onChangeForm={handleFormChange} />
         }
       </form>
     </div>

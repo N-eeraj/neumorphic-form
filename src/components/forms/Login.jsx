@@ -1,13 +1,18 @@
 import { useState } from 'react'
 import Input from '@components/Input'
 import Button from '@components/Button'
+import { isEmpty } from '@/utils'
 import formStyles from '@styles/form.module.css'
 
 const Login = ({onChangeForm, onSubmit}) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const handleClick = () => onSubmit({ email, password })
+  const handleClick = () => {
+    if (isEmpty(email)) return alert('Please enter your e-mail id')
+    if (isEmpty(password)) return alert('Please enter your password')
+    console.log({ email, password })
+  }
 
   return (
     <>

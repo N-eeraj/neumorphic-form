@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Input from '@components/Input'
 import Button from '@components/Button'
+import { isValidEmail, isValidPassword, isMatchingPasswords } from '@/utils'
 import formStyles from '@styles/form.module.css'
 
 const Register = ({onChangeForm, onSubmit}) => {
@@ -8,7 +9,13 @@ const Register = ({onChangeForm, onSubmit}) => {
   const [password, setPassword] = useState('')
   const [confirmPassword, ConfirmPassword] = useState('')
 
-  const handleClick = () => onSubmit({ email, password, confirmPassword })
+  const handleClick = () => {
+    if (!isValidEmail(email)) return alert('Invalid Email')
+    const [validPassword, passwordError] = isValidPassword(password)
+    if (!validPassword) return alert(passwordError)
+    if (!isMatchingPasswords(password, confirmPassword)) return alert('Passwords not matching')
+    console.log({ email, password, confirmPassword })
+  }
 
   return (
     <>
