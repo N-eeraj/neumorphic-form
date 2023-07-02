@@ -1,17 +1,20 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 
 import Input from '@components/Input'
 import Button from '@components/Button'
 import Toast from '@components/Toast'
 
+import { LoginCredentialsContext } from '@/context'
 import { isValidEmail, isValidPassword, isMatchingPasswords } from '@/utils'
 import formStyles from '@styles/form.module.css'
 
-const Register = ({onChangeForm, onSubmit}) => {
+const Register = ({onChangeForm}) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, ConfirmPassword] = useState('')
   const [toast, setToast] = useState({ show: false, text: null, success: null })
+
+  const [_, setLoginCredentials] = useContext(LoginCredentialsContext)
 
   const handleClick = () => {
     // validations
@@ -23,8 +26,9 @@ const Register = ({onChangeForm, onSubmit}) => {
     if (!isMatchingPasswords(password, confirmPassword))
       return setToast({show: true, text: 'Passwords not matching', success: false})
 
+    // add credentials to list
+    setLoginCredentials(prevCredentials => [...prevCredentials, { email, password }])
     setToast({show: true, text: 'Sign Up Successfull', success: true})
-    console.log({ email, password, confirmPassword })
   }
 
   const handleResetToast = () => setToast({ show: false, text: null, success: null })
