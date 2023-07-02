@@ -20,4 +20,4 @@ This will start the web app on a port in your local server.
 - [x] Functioning login & sign up form
 - [x] Add validations
 - [x] Show success & error toasts
-- [ ] Login with registered credentials
+- [x] Login with registered credentials
