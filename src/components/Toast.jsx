@@ -3,7 +3,9 @@ import toastStyles from '@styles/toast.module.css'
 
 const Toast = ({ show, text, success, onReset }) => {
   useEffect(() => {
-    const timeout = setTimeout(onReset, 2500)
+    let timeout
+    if (show)
+      timeout = setTimeout(onReset, 2500)
     return () => clearTimeout(timeout)
   })
   

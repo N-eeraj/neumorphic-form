@@ -5,7 +5,7 @@ import RegisterForm from '@components/forms/Register'
 import ToggleButton from '@components/Button/Toggle'
 import Toast from '@components/Toast'
 
-import { LoginCredentialsContext } from '@/context'
+import LoginCredentialsProvider from '@components/LoginCredentialsProvider'
 import { preventSubmit } from '@/utils'
 import appStyles from '@styles/app.module.css'
 
@@ -13,7 +13,6 @@ const App = () => {
   const [formType, setFormType] = useState('login')
   const [theme, setTheme] = useState('dark')
   const [toast, setToast] = useState({ show: false, text: null, success: null })
-  const [loginCredentials, setLoginCredentials] = useState([])
 
   const CurrentForm = () => {
     if (formType === 'login')
@@ -31,9 +30,9 @@ const App = () => {
       <ToggleButton theme={theme} onClick={handleToggleTheme} />
 
       <form className={appStyles.form} onSubmit={preventSubmit}>
-        <LoginCredentialsContext.Provider value={[loginCredentials, setLoginCredentials]}>
+        <LoginCredentialsProvider>
           <CurrentForm />
-        </LoginCredentialsContext.Provider>
+        </LoginCredentialsProvider>
       </form>
 
       <Toast show={toast.show} text={toast.text} success={toast.success} onReset={handleResetToast} />
