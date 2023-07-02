@@ -3,6 +3,7 @@
     bottom: 20vh;
     min-width: 240px;
     padding: 10px 20px;
+    background-color: var(--page);
     text-align: center;
     box-shadow: -3px -3px 10px var(--shadow-left), 3px 3px 10px var(--shadow-right);
     transition: 400ms;
