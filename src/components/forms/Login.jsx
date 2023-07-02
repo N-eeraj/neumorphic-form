@@ -1,6 +1,9 @@
 import { useState } from 'react'
+
 import Input from '@components/Input'
 import Button from '@components/Button'
+import Toast from '@components/Toast'
+
 import { isEmpty } from '@/utils'
 import formStyles from '@styles/form.module.css'
 
@@ -35,6 +38,8 @@ const Login = ({onChangeForm, onSubmit}) => {
           </span>
         </div>
       </div>
+
+      <Toast text="Login Text" type="success" />
     </>
   )
 }

@@ -1,0 +1,16 @@
+.toast {
+    position: fixed;
+    bottom: 20vh;
+    min-width: 200px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: -3px -3px 10px var(--shadow-left), 3px 3px 10px var(--shadow-right);
+}
+
+.success {
+    color: var(--success);
+}
+
+.error {
+    color: var(--error);
+}

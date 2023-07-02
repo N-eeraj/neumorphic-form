@@ -3,6 +3,8 @@
     --ink: #333;
     --shadow-left: #FAFCFF;
     --shadow-right: #C8CAD0;
+    --success: #070;
+    --error: #900;
 }
 
 [data-theme="dark"] {
@@ -10,6 +12,8 @@
     --ink: #EEE;
     --shadow-left: #202025;
     --shadow-right: #020205;
+    --success: #9F9;
+    --error: #F99;
 }
 
 * {

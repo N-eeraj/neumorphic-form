@@ -1,6 +1,9 @@
 import { useState } from 'react'
+
 import Input from '@components/Input'
 import Button from '@components/Button'
+import Toast from '@components/Toast'
+
 import { isValidEmail, isValidPassword, isMatchingPasswords } from '@/utils'
 import formStyles from '@styles/form.module.css'
 
@@ -39,6 +42,8 @@ const Register = ({onChangeForm, onSubmit}) => {
           </span>
         </div>
       </div>
+
+      <Toast text="Register Text" type="error" />
     </>
   )
 }
