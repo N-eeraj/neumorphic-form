@@ -18,5 +18,6 @@ This will start the web app on a port in your local server.
 ### ⚙️ Features
 - [x] Functioning theme toggle
 - [x] Functioning login & sign up form
-- [ ] Add validations
-- [ ] Show success & error toasts
+- [x] Add validations
+- [x] Show success & error toasts
+- [ ] Login with registered credentials

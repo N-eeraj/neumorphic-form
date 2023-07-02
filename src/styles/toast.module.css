@@ -1,10 +1,16 @@
 .toast {
     position: fixed;
     bottom: 20vh;
-    min-width: 200px;
-    padding: 10px;
+    min-width: 240px;
+    padding: 10px 20px;
     text-align: center;
     box-shadow: -3px -3px 10px var(--shadow-left), 3px 3px 10px var(--shadow-right);
+    transition: 400ms;
+}
+
+.hidden {
+    opacity: 0;
+    transform: scale(0.5) translateY(20px);
 }
 
 .success {

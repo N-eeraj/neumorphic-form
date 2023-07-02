@@ -11,14 +11,23 @@ const Register = ({onChangeForm, onSubmit}) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, ConfirmPassword] = useState('')
+  const [toast, setToast] = useState({ show: false, text: null, success: null })
 
   const handleClick = () => {
-    if (!isValidEmail(email)) return alert('Invalid Email')
+    // validations
+    if (!isValidEmail(email))
+      return setToast({show: true, text: 'Invalid Email', success: false})
     const [validPassword, passwordError] = isValidPassword(password)
-    if (!validPassword) return alert(passwordError)
-    if (!isMatchingPasswords(password, confirmPassword)) return alert('Passwords not matching')
+    if (!validPassword)
+      return setToast({show: true, text: passwordError, success: false})
+    if (!isMatchingPasswords(password, confirmPassword))
+      return setToast({show: true, text: 'Passwords not matching', success: false})
+
+    setToast({show: true, text: 'Sign Up Successfull', success: true})
     console.log({ email, password, confirmPassword })
   }
+
+  const handleResetToast = () => setToast({ show: false, text: null, success: null })
 
   return (
     <>
@@ -43,7 +52,7 @@ const Register = ({onChangeForm, onSubmit}) => {
         </div>
       </div>
 
-      <Toast text="Register Text" type="error" />
+      <Toast show={toast.show} text={toast.text} success={toast.success} onReset={handleResetToast} />
     </>
   )
 }

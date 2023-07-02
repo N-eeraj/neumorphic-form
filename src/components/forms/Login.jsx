@@ -10,12 +10,19 @@ import formStyles from '@styles/form.module.css'
 const Login = ({onChangeForm, onSubmit}) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [toast, setToast] = useState({ show: false, text: null, success: null })
 
   const handleClick = () => {
-    if (isEmpty(email)) return alert('Please enter your e-mail id')
-    if (isEmpty(password)) return alert('Please enter your password')
+    // validations
+    if (isEmpty(email))
+      return setToast({show: true, text: 'Please enter your e-mail id', success: false})
+    if (isEmpty(password))
+      return setToast({show: true, text: 'Please enter your password', success: false})
+
     console.log({ email, password })
   }
+
+  const handleResetToast = () => setToast({ show: false, text: null, success: null })
 
   return (
     <>
@@ -39,7 +46,7 @@ const Login = ({onChangeForm, onSubmit}) => {
         </div>
       </div>
 
-      <Toast text="Login Text" type="success" />
+      <Toast show={toast.show} text={toast.text} success={toast.success} onReset={handleResetToast} />
     </>
   )
 }
