@@ -46,7 +46,7 @@ const Login = ({ onChangeForm, onToast }) => {
 
         <div className={formStyles.switchText}>
           Don't have an account?
-          <span className={formStyles.switchButton} onClick={onChangeForm}>
+          <span className={formStyles.switchButton} onClick={() => onChangeForm('signUp')}>
             Sign Up
           </span>
         </div>

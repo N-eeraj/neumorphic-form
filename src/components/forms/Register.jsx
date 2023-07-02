@@ -12,7 +12,7 @@ const Register = ({ onChangeForm, onToast }) => {
   const [password, setPassword] = useState('')
   const [confirmPassword, ConfirmPassword] = useState('')
 
-  const [_, setLoginCredentials] = useContext(LoginCredentialsContext)
+  const [loginCredentials, setLoginCredentials] = useContext(LoginCredentialsContext)
 
   const handleClick = () => {
     // validations
@@ -23,6 +23,11 @@ const Register = ({ onChangeForm, onToast }) => {
       return onToast({show: true, text: passwordError, success: false})
     if (!isMatchingPasswords(password, confirmPassword))
       return onToast({show: true, text: 'Passwords not matching', success: false})
+
+    // check if email exists
+    const credentials = loginCredentials.find(({ email: mailId }) => mailId === email)
+    if (credentials)
+      return onToast({show: true, text: 'User exists! Please login', success: false})
 
     // add credentials to list
     setLoginCredentials(prevCredentials => [...prevCredentials, { email, password }])
@@ -46,7 +51,7 @@ const Register = ({ onChangeForm, onToast }) => {
 
         <div className={formStyles.switchText}>
           Already have an account?
-          <span className={formStyles.switchButton} onClick={onChangeForm}>
+          <span className={formStyles.switchButton} onClick={() => onChangeForm('login')}>
             Login
           </span>
         </div>

@@ -15,7 +15,13 @@ const App = () => {
   const [toast, setToast] = useState({ show: false, text: null, success: null })
   const [loginCredentials, setLoginCredentials] = useState([])
 
-  const handleFormChange = () => setFormType(prevForm => prevForm === 'login' ? 'signUp' : 'login')
+  const CurrentForm = () => {
+    if (formType === 'login')
+      return <LoginForm onChangeForm={handleFormChange} onToast={handleShowToast} />
+    return <RegisterForm onChangeForm={handleFormChange} onToast={handleShowToast} />
+  }
+
+  const handleFormChange = form => setFormType(form)
   const handleToggleTheme = theme => setTheme(theme)
   const handleShowToast = data => setToast(data)
   const handleResetToast = () => setToast({ show: false, text: null, success: null })
@@ -26,12 +32,7 @@ const App = () => {
 
       <form className={appStyles.form} onSubmit={preventSubmit}>
         <LoginCredentialsContext.Provider value={[loginCredentials, setLoginCredentials]}>
-          {
-            formType === 'login' ?
-              <LoginForm onChangeForm={handleFormChange} />
-            :
-              <RegisterForm onChangeForm={handleFormChange} />
-          }
+          <CurrentForm />
         </LoginCredentialsContext.Provider>
       </form>
 
