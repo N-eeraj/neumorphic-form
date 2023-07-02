@@ -3,7 +3,7 @@ import { useRef, useContext } from 'react'
 import Input from '@components/Input'
 import Button from '@components/Button'
 
-import { LoginContext } from '@components/LoginCredentialsProvider'
+import { AppContext } from '@components/ContextProvider'
 import { isEmpty } from '@/utils'
 import formStyles from '@styles/form.module.css'
 
@@ -11,7 +11,7 @@ const Login = ({ onChangeForm, onToast }) => {
   const email = useRef('')
   const password = useRef('')
   
-  const {loginCredentials} = useContext(LoginContext)
+  const {loginCredentials} = useContext(AppContext)
 
   const handleEmailChange = input => email.current = input
   const handlePasswordChange = input => password.current = input

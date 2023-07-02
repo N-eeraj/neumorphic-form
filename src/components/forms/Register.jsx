@@ -3,7 +3,7 @@ import { useRef, useContext } from 'react'
 import Input from '@components/Input'
 import Button from '@components/Button'
 
-import { LoginContext } from '@components/LoginCredentialsProvider'
+import { AppContext } from '@components/ContextProvider'
 import { isValidEmail, isValidPassword, isMatchingPasswords } from '@/utils'
 import formStyles from '@styles/form.module.css'
 
@@ -12,7 +12,7 @@ const Register = ({ onChangeForm, onToast }) => {
   const password = useRef('')
   const confirmPassword = useRef('')
 
-  const {loginCredentials, setLoginCredentials} = useContext(LoginContext)
+  const {loginCredentials, setLoginCredentials} = useContext(AppContext)
 
   const handleEmailChange = input => email.current = input
   const handlePasswordChange = input => password.current = input

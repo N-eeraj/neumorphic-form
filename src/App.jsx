@@ -5,7 +5,7 @@ import RegisterForm from '@components/forms/Register'
 import ToggleButton from '@components/Button/Toggle'
 import Toast from '@components/Toast'
 
-import LoginCredentialsProvider from '@components/LoginCredentialsProvider'
+import ContextProvider from '@components/ContextProvider'
 import { preventSubmit } from '@/utils'
 import appStyles from '@styles/app.module.css'
 
@@ -13,12 +13,6 @@ const App = () => {
   const [formType, setFormType] = useState('login')
   const [theme, setTheme] = useState('dark')
   const [toast, setToast] = useState({ show: false, text: null, success: null })
-
-  const CurrentForm = () => {
-    if (formType === 'login')
-      return <LoginForm onChangeForm={handleFormChange} onToast={handleShowToast} />
-    return <RegisterForm onChangeForm={handleFormChange} onToast={handleShowToast} />
-  }
 
   const handleFormChange = form => setFormType(form)
   const handleToggleTheme = theme => setTheme(theme)
@@ -30,9 +24,13 @@ const App = () => {
       <ToggleButton theme={theme} onClick={handleToggleTheme} />
 
       <form className={appStyles.form} onSubmit={preventSubmit}>
-        <LoginCredentialsProvider>
-          <CurrentForm />
-        </LoginCredentialsProvider>
+        <ContextProvider>
+          {
+            formType === 'login' ?
+              <LoginForm onChangeForm={handleFormChange} onToast={handleShowToast} /> :
+              <RegisterForm onChangeForm={handleFormChange} onToast={handleShowToast} />
+          }
+        </ContextProvider>
       </form>
 
       <Toast show={toast.show} text={toast.text} success={toast.success} onReset={handleResetToast} />
